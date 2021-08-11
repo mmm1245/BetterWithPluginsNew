@@ -1,0 +1,9 @@
+name: BetterWithPlugins
+main: me.MaY.spigot.betterwithplugins.BetterWithPluginsMain
+author: mmm1245,HypronixDev
+version: 1.0.0
+api-version: 1.17
+commands:
+   bwpgive:
+      description: gives bwp item
+      usage: /<command> <item>
