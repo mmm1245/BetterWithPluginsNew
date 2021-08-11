@@ -12,7 +12,7 @@ public class BetterWithPluginsMain extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        
+
     }
 
 	public BetterWithPluginsMain getINSTANCE() {
