@@ -8,12 +8,14 @@ public class NamespacedKeyStorage {
 	private NamespacedKey customItemKey;
 	private NamespacedKey explosivePickaxeItemKey;
 	private NamespacedKey devNullItemKey;
+	private NamespacedKey flyingThingItemKey;
 	private NamespacedKey scrapKey;
 	public NamespacedKeyStorage() {
 		customItemKey = new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "customItem");
 		explosivePickaxeItemKey = new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "explosive_pickaxe");
 		devNullItemKey = new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "dev_null");
 		scrapKey = new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "scrap");
+		flyingThingItemKey = new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "flying_thing");
 	}
 	public static NamespacedKey getCustomItemKey() {
 		return BetterWithPluginsMain.getNamespacedKeyStorage().customItemKey;
@@ -26,5 +28,8 @@ public class NamespacedKeyStorage {
 	}
 	public static NamespacedKey getScrapKey() {
 		return BetterWithPluginsMain.getNamespacedKeyStorage().scrapKey;
+	}
+	public static NamespacedKey getFlyingThingItemKey() {
+		return BetterWithPluginsMain.getNamespacedKeyStorage().flyingThingItemKey;
 	}
 }

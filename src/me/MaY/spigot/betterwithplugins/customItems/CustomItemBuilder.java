@@ -1,4 +1,4 @@
-package me.MaY.spigot.betterwithplugins.util;
+package me.MaY.spigot.betterwithplugins.customItems;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 
 import me.MaY.spigot.betterwithplugins.BetterWithPluginsMain;
+import me.MaY.spigot.betterwithplugins.util.NamespacedKeyStorage;
 
 public class CustomItemBuilder {
 	public static ItemStack createCustomItemStack(Material material, int amount, String name, NamespacedKey id, String...lore) {
