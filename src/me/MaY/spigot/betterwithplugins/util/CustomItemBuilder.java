@@ -16,7 +16,7 @@ public class CustomItemBuilder {
 		ItemMeta meta = itemStack.getItemMeta();
 		if(name != null)
 			meta.setDisplayName("§f" + name);
-		meta.getPersistentDataContainer().set(new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "customItem"), PersistentDataType.STRING, id.toString());
+		meta.getPersistentDataContainer().set(NamespacedKeyStorage.getCustomItemKey(), PersistentDataType.STRING, id.toString());
 		if(lore != null && lore.length > 0) {
 			ArrayList<String> lores = new ArrayList<>();
 			for(int i = 0;i < lore.length;i++) {
@@ -32,7 +32,7 @@ public class CustomItemBuilder {
 		ItemMeta meta = itemStack.getItemMeta();
 		if(name != null)
 			meta.setDisplayName("§f" + name);
-		meta.getPersistentDataContainer().set(new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "customItem"), PersistentDataType.STRING, id.getNamespace() + ":" + id.getKey());
+		meta.getPersistentDataContainer().set(NamespacedKeyStorage.getCustomItemKey(), PersistentDataType.STRING, id.toString());
 		if(lore != null && lore.length > 0) {
 			ArrayList<String> lores = new ArrayList<>();
 			for(int i = 0;i < lore.length;i++) {

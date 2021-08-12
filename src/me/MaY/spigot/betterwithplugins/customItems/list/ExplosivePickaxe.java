@@ -12,11 +12,12 @@ import org.bukkit.persistence.PersistentDataType;
 import me.MaY.spigot.betterwithplugins.BetterWithPluginsMain;
 import me.MaY.spigot.betterwithplugins.customItems.CustomItem;
 import me.MaY.spigot.betterwithplugins.util.CustomItemBuilder;
+import me.MaY.spigot.betterwithplugins.util.NamespacedKeyStorage;
 
 public class ExplosivePickaxe extends CustomItem{
 	@Override
 	public ItemStack create(int amount) {
-		return CustomItemBuilder.createCustomItemStack(Material.DIAMOND_PICKAXE, amount, "Explosive pickaxe", new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "explosive_pickaxe"), "BOOM!!!");
+		return CustomItemBuilder.createCustomItemStack(Material.DIAMOND_PICKAXE, amount, "Explosive pickaxe", NamespacedKeyStorage.getExplosivePickaxeKey(), "BOOM!!!");
 	}
 
 	@SuppressWarnings("unlikely-arg-type")
@@ -26,7 +27,7 @@ public class ExplosivePickaxe extends CustomItem{
 			return false;
 		if(is.getItemMeta() == null)
 			return false;
-		return is.getItemMeta().getPersistentDataContainer().getOrDefault(new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "customItem"), PersistentDataType.STRING, "abc").equals(new NamespacedKey(BetterWithPluginsMain.getINSTANCE(), "explosive_pickaxe"));
+		return is.getItemMeta().getPersistentDataContainer().getOrDefault(NamespacedKeyStorage.getCustomItemKey(), PersistentDataType.STRING, "abc").equals(NamespacedKeyStorage.getExplosivePickaxeKey().toString());
 	}
 	
 	public static void pickExplode(Location loc, ItemStack stack) {
@@ -41,7 +42,6 @@ public class ExplosivePickaxe extends CustomItem{
 					Block block = loc.getWorld().getBlockAt(xL+x, yL+y, zL+z);
 					if(block == null)
 						continue;
-					System.out.println(block.getLocation().toString() + " is: " + block.getType().getBlastResistance());
 					if(block.getType().getBlastResistance() <= 6f) {
 						block.breakNaturally(stack);
 					}
